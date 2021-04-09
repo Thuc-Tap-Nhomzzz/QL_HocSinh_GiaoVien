@@ -1,0 +1,16 @@
+E:\Thuc tap nhom\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\bin\Debug\QL_GiaoVien_HocSinh.exe.config
+E:\Thuc tap nhom\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\bin\Debug\QL_GiaoVien_HocSinh.exe
+E:\Thuc tap nhom\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\bin\Debug\QL_GiaoVien_HocSinh.pdb
+E:\Thuc tap nhom\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\obj\Debug\QL_GiaoVien_HocSinh.csprojAssemblyReference.cache
+E:\Thuc tap nhom\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\obj\Debug\QL_GiaoVien_HocSinh.FrmMain.resources
+E:\Thuc tap nhom\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\obj\Debug\QL_GiaoVien_HocSinh.Properties.Resources.resources
+E:\Thuc tap nhom\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\obj\Debug\QL_GiaoVien_HocSinh.csproj.GenerateResource.cache
+E:\Thuc tap nhom\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\obj\Debug\QL_GiaoVien_HocSinh.csproj.CoreCompileInputs.cache
+E:\Thuc tap nhom\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\obj\Debug\QL_GiaoVien_HocSinh.exe
+E:\Thuc tap nhom\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\obj\Debug\QL_GiaoVien_HocSinh.pdb
+E:\Thuc tap nhom\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\obj\Debug\QL_GiaoVien_HocSinh.View.DangNhap.resources
+E:\Thuc tap nhom\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\obj\Debug\QL_GiaoVien_HocSinh.View.ThemGV.resources
+E:\Thuc tap nhom\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\obj\Debug\QL_GiaoVien_HocSinh.View.ThemHS.resources
+E:\Thuc tap nhom\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\obj\Debug\QL_GiaoVien_HocSinh.View.SuaGV.resources
+E:\Thuc tap nhom\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\obj\Debug\QL_GiaoVien_HocSinh.View.SuaHS.resources
+E:\Thuc tap nhom\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\obj\Debug\QL_GiaoVien_HocSinh.View.TimKiem.resources
