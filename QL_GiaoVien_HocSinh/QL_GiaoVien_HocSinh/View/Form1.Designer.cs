@@ -36,18 +36,37 @@ namespace QL_GiaoVien_HocSinh
             this.labelqlgv = new System.Windows.Forms.Label();
             this.labelqlhs = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.BtnHD = new System.Windows.Forms.Button();
+            this.BtnQLGD = new System.Windows.Forms.Button();
+            this.BtnQLGV = new System.Windows.Forms.Button();
+            this.BtnQLHS = new System.Windows.Forms.Button();
             this.tabPageQLHS = new System.Windows.Forms.TabPage();
             this.dataGridViewQL_HS = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
+            this.BtnThoatHS = new System.Windows.Forms.Button();
+            this.BtnTimKiemHS = new System.Windows.Forms.Button();
+            this.BtnXoaHS = new System.Windows.Forms.Button();
+            this.BtnSuaHS = new System.Windows.Forms.Button();
+            this.BtnThemHS = new System.Windows.Forms.Button();
             this.tabPageQLGV = new System.Windows.Forms.TabPage();
             this.dataGridViewQL_GV = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
+            this.BtnThoatGV = new System.Windows.Forms.Button();
+            this.BtnTimKiemGV = new System.Windows.Forms.Button();
+            this.BtnXoaGV = new System.Windows.Forms.Button();
+            this.BtnSuaGV = new System.Windows.Forms.Button();
+            this.BtnThemGV = new System.Windows.Forms.Button();
             this.tabPageQLGD = new System.Windows.Forms.TabPage();
             this.dataGridViewQL_GiangDay = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.tbQuanLyGD_Tiet = new System.Windows.Forms.TextBox();
+            this.dtpNgayThi = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgayKT = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgayBD = new System.Windows.Forms.DateTimePicker();
             this.btnThoatQL_GD = new System.Windows.Forms.Button();
             this.btnCapNhat = new System.Windows.Forms.Button();
-            this.tbQuanLyGD_ThuTiet = new System.Windows.Forms.TextBox();
+            this.tbQuanLyGD_Thu = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.tbQuanLyGD_GiaoVienTen = new System.Windows.Forms.TextBox();
             this.tbQuanLyGD_TenMonHoc = new System.Windows.Forms.TextBox();
@@ -68,25 +87,8 @@ namespace QL_GiaoVien_HocSinh
             this.label5 = new System.Windows.Forms.Label();
             this.tabPageHD = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dtpNgayBD = new System.Windows.Forms.DateTimePicker();
-            this.dtpNgayKT = new System.Windows.Forms.DateTimePicker();
-            this.dtpNgayThi = new System.Windows.Forms.DateTimePicker();
-            this.BtnHD = new System.Windows.Forms.Button();
-            this.BtnQLGD = new System.Windows.Forms.Button();
-            this.BtnQLGV = new System.Windows.Forms.Button();
-            this.BtnQLHS = new System.Windows.Forms.Button();
-            this.BtnThoatHS = new System.Windows.Forms.Button();
-            this.BtnTimKiemHS = new System.Windows.Forms.Button();
-            this.BtnXoaHS = new System.Windows.Forms.Button();
-            this.BtnSuaHS = new System.Windows.Forms.Button();
-            this.BtnThemHS = new System.Windows.Forms.Button();
-            this.BtnThoatGV = new System.Windows.Forms.Button();
-            this.BtnTimKiemGV = new System.Windows.Forms.Button();
-            this.BtnXoaGV = new System.Windows.Forms.Button();
-            this.BtnSuaGV = new System.Windows.Forms.Button();
-            this.BtnThemGV = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPageQLHS.SuspendLayout();
@@ -192,6 +194,54 @@ namespace QL_GiaoVien_HocSinh
             this.label2.TabIndex = 4;
             this.label2.Text = "Quản Lý Học Sinh, Giáo Viên";
             // 
+            // BtnHD
+            // 
+            this.BtnHD.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnHD.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnHD.Image = global::QL_GiaoVien_HocSinh.Properties.Resources.Question_32x32;
+            this.BtnHD.Location = new System.Drawing.Point(612, 299);
+            this.BtnHD.Name = "BtnHD";
+            this.BtnHD.Size = new System.Drawing.Size(130, 135);
+            this.BtnHD.TabIndex = 3;
+            this.BtnHD.UseVisualStyleBackColor = false;
+            this.BtnHD.Click += new System.EventHandler(this.BtnHD_Click);
+            // 
+            // BtnQLGD
+            // 
+            this.BtnQLGD.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnQLGD.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnQLGD.Image = global::QL_GiaoVien_HocSinh.Properties.Resources.Calendar_32x32;
+            this.BtnQLGD.Location = new System.Drawing.Point(476, 299);
+            this.BtnQLGD.Name = "BtnQLGD";
+            this.BtnQLGD.Size = new System.Drawing.Size(130, 135);
+            this.BtnQLGD.TabIndex = 2;
+            this.BtnQLGD.UseVisualStyleBackColor = false;
+            this.BtnQLGD.Click += new System.EventHandler(this.BtnQLGD_Click);
+            // 
+            // BtnQLGV
+            // 
+            this.BtnQLGV.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnQLGV.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnQLGV.Image = global::QL_GiaoVien_HocSinh.Properties.Resources.Customer_32x32;
+            this.BtnQLGV.Location = new System.Drawing.Point(612, 122);
+            this.BtnQLGV.Name = "BtnQLGV";
+            this.BtnQLGV.Size = new System.Drawing.Size(130, 135);
+            this.BtnQLGV.TabIndex = 1;
+            this.BtnQLGV.UseVisualStyleBackColor = false;
+            this.BtnQLGV.Click += new System.EventHandler(this.BtnQLGV_Click);
+            // 
+            // BtnQLHS
+            // 
+            this.BtnQLHS.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnQLHS.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnQLHS.Image = global::QL_GiaoVien_HocSinh.Properties.Resources.Team_32x32;
+            this.BtnQLHS.Location = new System.Drawing.Point(476, 122);
+            this.BtnQLHS.Name = "BtnQLHS";
+            this.BtnQLHS.Size = new System.Drawing.Size(130, 135);
+            this.BtnQLHS.TabIndex = 0;
+            this.BtnQLHS.UseVisualStyleBackColor = false;
+            this.BtnQLHS.Click += new System.EventHandler(this.BtnQLHS_Click);
+            // 
             // tabPageQLHS
             // 
             this.tabPageQLHS.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -232,6 +282,76 @@ namespace QL_GiaoVien_HocSinh
             this.label4.TabIndex = 12;
             this.label4.Text = "Danh Sách Học Sinh";
             // 
+            // BtnThoatHS
+            // 
+            this.BtnThoatHS.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnThoatHS.Image = global::QL_GiaoVien_HocSinh.Properties.Resources.Cancel_32x32;
+            this.BtnThoatHS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnThoatHS.Location = new System.Drawing.Point(1163, 600);
+            this.BtnThoatHS.Name = "BtnThoatHS";
+            this.BtnThoatHS.Size = new System.Drawing.Size(86, 37);
+            this.BtnThoatHS.TabIndex = 11;
+            this.BtnThoatHS.Text = "Thoát";
+            this.BtnThoatHS.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnThoatHS.UseVisualStyleBackColor = false;
+            this.BtnThoatHS.Click += new System.EventHandler(this.BtnThoatHS_Click);
+            // 
+            // BtnTimKiemHS
+            // 
+            this.BtnTimKiemHS.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnTimKiemHS.Image = global::QL_GiaoVien_HocSinh.Properties.Resources.Zoom_32x32;
+            this.BtnTimKiemHS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnTimKiemHS.Location = new System.Drawing.Point(1065, 600);
+            this.BtnTimKiemHS.Name = "BtnTimKiemHS";
+            this.BtnTimKiemHS.Size = new System.Drawing.Size(97, 37);
+            this.BtnTimKiemHS.TabIndex = 10;
+            this.BtnTimKiemHS.Text = "Tìm Kiếm";
+            this.BtnTimKiemHS.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnTimKiemHS.UseVisualStyleBackColor = false;
+            this.BtnTimKiemHS.Click += new System.EventHandler(this.BtnTimKiemHS_Click);
+            // 
+            // BtnXoaHS
+            // 
+            this.BtnXoaHS.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnXoaHS.Image = global::QL_GiaoVien_HocSinh.Properties.Resources.Clear_32x32;
+            this.BtnXoaHS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnXoaHS.Location = new System.Drawing.Point(973, 600);
+            this.BtnXoaHS.Name = "BtnXoaHS";
+            this.BtnXoaHS.Size = new System.Drawing.Size(86, 37);
+            this.BtnXoaHS.TabIndex = 9;
+            this.BtnXoaHS.Text = "Xóa";
+            this.BtnXoaHS.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnXoaHS.UseVisualStyleBackColor = false;
+            this.BtnXoaHS.Click += new System.EventHandler(this.BtnXoaHS_Click);
+            // 
+            // BtnSuaHS
+            // 
+            this.BtnSuaHS.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnSuaHS.Image = global::QL_GiaoVien_HocSinh.Properties.Resources.PictureShapeOutlineColor_32x32;
+            this.BtnSuaHS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnSuaHS.Location = new System.Drawing.Point(881, 600);
+            this.BtnSuaHS.Name = "BtnSuaHS";
+            this.BtnSuaHS.Size = new System.Drawing.Size(86, 37);
+            this.BtnSuaHS.TabIndex = 8;
+            this.BtnSuaHS.Text = "Sửa";
+            this.BtnSuaHS.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnSuaHS.UseVisualStyleBackColor = false;
+            this.BtnSuaHS.Click += new System.EventHandler(this.BtnSuaHS_Click);
+            // 
+            // BtnThemHS
+            // 
+            this.BtnThemHS.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnThemHS.Image = global::QL_GiaoVien_HocSinh.Properties.Resources.Add_32x32;
+            this.BtnThemHS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnThemHS.Location = new System.Drawing.Point(789, 600);
+            this.BtnThemHS.Name = "BtnThemHS";
+            this.BtnThemHS.Size = new System.Drawing.Size(86, 37);
+            this.BtnThemHS.TabIndex = 7;
+            this.BtnThemHS.Text = "Thêm";
+            this.BtnThemHS.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnThemHS.UseVisualStyleBackColor = false;
+            this.BtnThemHS.Click += new System.EventHandler(this.BtnThemHS_Click);
+            // 
             // tabPageQLGV
             // 
             this.tabPageQLGV.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -271,6 +391,76 @@ namespace QL_GiaoVien_HocSinh
             this.label3.TabIndex = 7;
             this.label3.Text = "Danh Sách Giáo Viên";
             // 
+            // BtnThoatGV
+            // 
+            this.BtnThoatGV.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnThoatGV.Image = global::QL_GiaoVien_HocSinh.Properties.Resources.Cancel_32x32;
+            this.BtnThoatGV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnThoatGV.Location = new System.Drawing.Point(1163, 600);
+            this.BtnThoatGV.Name = "BtnThoatGV";
+            this.BtnThoatGV.Size = new System.Drawing.Size(86, 37);
+            this.BtnThoatGV.TabIndex = 6;
+            this.BtnThoatGV.Text = "Thoát";
+            this.BtnThoatGV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnThoatGV.UseVisualStyleBackColor = false;
+            this.BtnThoatGV.Click += new System.EventHandler(this.BtnThoatGV_Click);
+            // 
+            // BtnTimKiemGV
+            // 
+            this.BtnTimKiemGV.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnTimKiemGV.Image = global::QL_GiaoVien_HocSinh.Properties.Resources.Zoom_32x32;
+            this.BtnTimKiemGV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnTimKiemGV.Location = new System.Drawing.Point(1065, 600);
+            this.BtnTimKiemGV.Name = "BtnTimKiemGV";
+            this.BtnTimKiemGV.Size = new System.Drawing.Size(97, 37);
+            this.BtnTimKiemGV.TabIndex = 5;
+            this.BtnTimKiemGV.Text = "Tìm Kiếm";
+            this.BtnTimKiemGV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnTimKiemGV.UseVisualStyleBackColor = false;
+            this.BtnTimKiemGV.Click += new System.EventHandler(this.BtnTimKiemGV_Click);
+            // 
+            // BtnXoaGV
+            // 
+            this.BtnXoaGV.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnXoaGV.Image = global::QL_GiaoVien_HocSinh.Properties.Resources.Clear_32x32;
+            this.BtnXoaGV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnXoaGV.Location = new System.Drawing.Point(973, 600);
+            this.BtnXoaGV.Name = "BtnXoaGV";
+            this.BtnXoaGV.Size = new System.Drawing.Size(86, 37);
+            this.BtnXoaGV.TabIndex = 4;
+            this.BtnXoaGV.Text = "Xóa";
+            this.BtnXoaGV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnXoaGV.UseVisualStyleBackColor = false;
+            this.BtnXoaGV.Click += new System.EventHandler(this.BtnXoaGV_Click);
+            // 
+            // BtnSuaGV
+            // 
+            this.BtnSuaGV.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnSuaGV.Image = global::QL_GiaoVien_HocSinh.Properties.Resources.PictureShapeOutlineColor_32x32;
+            this.BtnSuaGV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnSuaGV.Location = new System.Drawing.Point(881, 600);
+            this.BtnSuaGV.Name = "BtnSuaGV";
+            this.BtnSuaGV.Size = new System.Drawing.Size(86, 37);
+            this.BtnSuaGV.TabIndex = 3;
+            this.BtnSuaGV.Text = "Sửa";
+            this.BtnSuaGV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnSuaGV.UseVisualStyleBackColor = false;
+            this.BtnSuaGV.Click += new System.EventHandler(this.BtnSuaGV_Click);
+            // 
+            // BtnThemGV
+            // 
+            this.BtnThemGV.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnThemGV.Image = global::QL_GiaoVien_HocSinh.Properties.Resources.Add_32x32;
+            this.BtnThemGV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnThemGV.Location = new System.Drawing.Point(789, 600);
+            this.BtnThemGV.Name = "BtnThemGV";
+            this.BtnThemGV.Size = new System.Drawing.Size(86, 37);
+            this.BtnThemGV.TabIndex = 2;
+            this.BtnThemGV.Text = "Thêm";
+            this.BtnThemGV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnThemGV.UseVisualStyleBackColor = false;
+            this.BtnThemGV.Click += new System.EventHandler(this.BtnThemGV_Click);
+            // 
             // tabPageQLGD
             // 
             this.tabPageQLGD.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -296,12 +486,14 @@ namespace QL_GiaoVien_HocSinh
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Controls.Add(this.tbQuanLyGD_Tiet);
             this.groupBox2.Controls.Add(this.dtpNgayThi);
             this.groupBox2.Controls.Add(this.dtpNgayKT);
             this.groupBox2.Controls.Add(this.dtpNgayBD);
             this.groupBox2.Controls.Add(this.btnThoatQL_GD);
             this.groupBox2.Controls.Add(this.btnCapNhat);
-            this.groupBox2.Controls.Add(this.tbQuanLyGD_ThuTiet);
+            this.groupBox2.Controls.Add(this.tbQuanLyGD_Thu);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.tbQuanLyGD_GiaoVienTen);
             this.groupBox2.Controls.Add(this.tbQuanLyGD_TenMonHoc);
@@ -327,6 +519,51 @@ namespace QL_GiaoVien_HocSinh
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(53, 138);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(36, 15);
+            this.label15.TabIndex = 98;
+            this.label15.Text = "Sĩ Số";
+            // 
+            // tbQuanLyGD_Tiet
+            // 
+            this.tbQuanLyGD_Tiet.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.tbQuanLyGD_Tiet.Location = new System.Drawing.Point(595, 45);
+            this.tbQuanLyGD_Tiet.Name = "tbQuanLyGD_Tiet";
+            this.tbQuanLyGD_Tiet.ReadOnly = true;
+            this.tbQuanLyGD_Tiet.Size = new System.Drawing.Size(200, 21);
+            this.tbQuanLyGD_Tiet.TabIndex = 97;
+            // 
+            // dtpNgayThi
+            // 
+            this.dtpNgayThi.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpNgayThi.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayThi.Location = new System.Drawing.Point(595, 138);
+            this.dtpNgayThi.Name = "dtpNgayThi";
+            this.dtpNgayThi.Size = new System.Drawing.Size(200, 22);
+            this.dtpNgayThi.TabIndex = 96;
+            // 
+            // dtpNgayKT
+            // 
+            this.dtpNgayKT.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpNgayKT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayKT.Location = new System.Drawing.Point(595, 111);
+            this.dtpNgayKT.Name = "dtpNgayKT";
+            this.dtpNgayKT.Size = new System.Drawing.Size(200, 22);
+            this.dtpNgayKT.TabIndex = 95;
+            // 
+            // dtpNgayBD
+            // 
+            this.dtpNgayBD.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpNgayBD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayBD.Location = new System.Drawing.Point(595, 78);
+            this.dtpNgayBD.Name = "dtpNgayBD";
+            this.dtpNgayBD.Size = new System.Drawing.Size(200, 22);
+            this.dtpNgayBD.TabIndex = 94;
+            // 
             // btnThoatQL_GD
             // 
             this.btnThoatQL_GD.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -348,23 +585,23 @@ namespace QL_GiaoVien_HocSinh
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseVisualStyleBackColor = false;
             // 
-            // tbQuanLyGD_ThuTiet
+            // tbQuanLyGD_Thu
             // 
-            this.tbQuanLyGD_ThuTiet.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.tbQuanLyGD_ThuTiet.Location = new System.Drawing.Point(595, 46);
-            this.tbQuanLyGD_ThuTiet.Name = "tbQuanLyGD_ThuTiet";
-            this.tbQuanLyGD_ThuTiet.ReadOnly = true;
-            this.tbQuanLyGD_ThuTiet.Size = new System.Drawing.Size(200, 21);
-            this.tbQuanLyGD_ThuTiet.TabIndex = 31;
+            this.tbQuanLyGD_Thu.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.tbQuanLyGD_Thu.Location = new System.Drawing.Point(595, 14);
+            this.tbQuanLyGD_Thu.Name = "tbQuanLyGD_Thu";
+            this.tbQuanLyGD_Thu.ReadOnly = true;
+            this.tbQuanLyGD_Thu.Size = new System.Drawing.Size(200, 21);
+            this.tbQuanLyGD_Thu.TabIndex = 31;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(489, 18);
+            this.label17.Location = new System.Drawing.Point(489, 17);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(34, 15);
+            this.label17.Size = new System.Drawing.Size(28, 15);
             this.label17.TabIndex = 30;
-            this.label17.Text = "Sĩ số";
+            this.label17.Text = "Thứ";
             // 
             // tbQuanLyGD_GiaoVienTen
             // 
@@ -431,7 +668,7 @@ namespace QL_GiaoVien_HocSinh
             // tbQuanLyGD_SiSo
             // 
             this.tbQuanLyGD_SiSo.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.tbQuanLyGD_SiSo.Location = new System.Drawing.Point(595, 15);
+            this.tbQuanLyGD_SiSo.Location = new System.Drawing.Point(171, 139);
             this.tbQuanLyGD_SiSo.Name = "tbQuanLyGD_SiSo";
             this.tbQuanLyGD_SiSo.Size = new System.Drawing.Size(200, 21);
             this.tbQuanLyGD_SiSo.TabIndex = 21;
@@ -450,9 +687,9 @@ namespace QL_GiaoVien_HocSinh
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(489, 48);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(51, 15);
+            this.label10.Size = new System.Drawing.Size(27, 15);
             this.label10.TabIndex = 19;
-            this.label10.Text = "Thứ- tiết";
+            this.label10.Text = "Tiết";
             // 
             // tbQuanLyGD_GiaoVienMa
             // 
@@ -538,6 +775,15 @@ namespace QL_GiaoVien_HocSinh
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(48, 59);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(70, 15);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "Hướng Dẫn";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -549,230 +795,6 @@ namespace QL_GiaoVien_HocSinh
             this.label1.TabIndex = 1;
             this.label1.Text = "Copyright by My Nhóm- 2021";
             // 
-            // dtpNgayBD
-            // 
-            this.dtpNgayBD.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtpNgayBD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayBD.Location = new System.Drawing.Point(595, 78);
-            this.dtpNgayBD.Name = "dtpNgayBD";
-            this.dtpNgayBD.Size = new System.Drawing.Size(200, 22);
-            this.dtpNgayBD.TabIndex = 94;
-            // 
-            // dtpNgayKT
-            // 
-            this.dtpNgayKT.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtpNgayKT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayKT.Location = new System.Drawing.Point(595, 111);
-            this.dtpNgayKT.Name = "dtpNgayKT";
-            this.dtpNgayKT.Size = new System.Drawing.Size(200, 22);
-            this.dtpNgayKT.TabIndex = 95;
-            // 
-            // dtpNgayThi
-            // 
-            this.dtpNgayThi.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtpNgayThi.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayThi.Location = new System.Drawing.Point(595, 138);
-            this.dtpNgayThi.Name = "dtpNgayThi";
-            this.dtpNgayThi.Size = new System.Drawing.Size(200, 22);
-            this.dtpNgayThi.TabIndex = 96;
-            // 
-            // BtnHD
-            // 
-            this.BtnHD.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnHD.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnHD.Image = global::QL_GiaoVien_HocSinh.Properties.Resources.Question_32x32;
-            this.BtnHD.Location = new System.Drawing.Point(612, 299);
-            this.BtnHD.Name = "BtnHD";
-            this.BtnHD.Size = new System.Drawing.Size(130, 135);
-            this.BtnHD.TabIndex = 3;
-            this.BtnHD.UseVisualStyleBackColor = false;
-            this.BtnHD.Click += new System.EventHandler(this.BtnHD_Click);
-            // 
-            // BtnQLGD
-            // 
-            this.BtnQLGD.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnQLGD.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnQLGD.Image = global::QL_GiaoVien_HocSinh.Properties.Resources.Calendar_32x32;
-            this.BtnQLGD.Location = new System.Drawing.Point(476, 299);
-            this.BtnQLGD.Name = "BtnQLGD";
-            this.BtnQLGD.Size = new System.Drawing.Size(130, 135);
-            this.BtnQLGD.TabIndex = 2;
-            this.BtnQLGD.UseVisualStyleBackColor = false;
-            this.BtnQLGD.Click += new System.EventHandler(this.BtnQLGD_Click);
-            // 
-            // BtnQLGV
-            // 
-            this.BtnQLGV.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnQLGV.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnQLGV.Image = global::QL_GiaoVien_HocSinh.Properties.Resources.Customer_32x32;
-            this.BtnQLGV.Location = new System.Drawing.Point(612, 122);
-            this.BtnQLGV.Name = "BtnQLGV";
-            this.BtnQLGV.Size = new System.Drawing.Size(130, 135);
-            this.BtnQLGV.TabIndex = 1;
-            this.BtnQLGV.UseVisualStyleBackColor = false;
-            this.BtnQLGV.Click += new System.EventHandler(this.BtnQLGV_Click);
-            // 
-            // BtnQLHS
-            // 
-            this.BtnQLHS.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnQLHS.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnQLHS.Image = global::QL_GiaoVien_HocSinh.Properties.Resources.Team_32x32;
-            this.BtnQLHS.Location = new System.Drawing.Point(476, 122);
-            this.BtnQLHS.Name = "BtnQLHS";
-            this.BtnQLHS.Size = new System.Drawing.Size(130, 135);
-            this.BtnQLHS.TabIndex = 0;
-            this.BtnQLHS.UseVisualStyleBackColor = false;
-            this.BtnQLHS.Click += new System.EventHandler(this.BtnQLHS_Click);
-            // 
-            // BtnThoatHS
-            // 
-            this.BtnThoatHS.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnThoatHS.Image = global::QL_GiaoVien_HocSinh.Properties.Resources.Cancel_32x32;
-            this.BtnThoatHS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnThoatHS.Location = new System.Drawing.Point(1163, 600);
-            this.BtnThoatHS.Name = "BtnThoatHS";
-            this.BtnThoatHS.Size = new System.Drawing.Size(86, 37);
-            this.BtnThoatHS.TabIndex = 11;
-            this.BtnThoatHS.Text = "Thoát";
-            this.BtnThoatHS.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnThoatHS.UseVisualStyleBackColor = false;
-            this.BtnThoatHS.Click += new System.EventHandler(this.BtnThoatHS_Click);
-            // 
-            // BtnTimKiemHS
-            // 
-            this.BtnTimKiemHS.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnTimKiemHS.Image = global::QL_GiaoVien_HocSinh.Properties.Resources.Zoom_32x32;
-            this.BtnTimKiemHS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnTimKiemHS.Location = new System.Drawing.Point(1065, 600);
-            this.BtnTimKiemHS.Name = "BtnTimKiemHS";
-            this.BtnTimKiemHS.Size = new System.Drawing.Size(97, 37);
-            this.BtnTimKiemHS.TabIndex = 10;
-            this.BtnTimKiemHS.Text = "Tìm Kiếm";
-            this.BtnTimKiemHS.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnTimKiemHS.UseVisualStyleBackColor = false;
-            this.BtnTimKiemHS.Click += new System.EventHandler(this.BtnTimKiemHS_Click);
-            // 
-            // BtnXoaHS
-            // 
-            this.BtnXoaHS.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnXoaHS.Image = global::QL_GiaoVien_HocSinh.Properties.Resources.Clear_32x32;
-            this.BtnXoaHS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnXoaHS.Location = new System.Drawing.Point(973, 600);
-            this.BtnXoaHS.Name = "BtnXoaHS";
-            this.BtnXoaHS.Size = new System.Drawing.Size(86, 37);
-            this.BtnXoaHS.TabIndex = 9;
-            this.BtnXoaHS.Text = "Xóa";
-            this.BtnXoaHS.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnXoaHS.UseVisualStyleBackColor = false;
-            this.BtnXoaHS.Click += new System.EventHandler(this.BtnXoaHS_Click);
-            // 
-            // BtnSuaHS
-            // 
-            this.BtnSuaHS.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnSuaHS.Image = global::QL_GiaoVien_HocSinh.Properties.Resources.PictureShapeOutlineColor_32x32;
-            this.BtnSuaHS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnSuaHS.Location = new System.Drawing.Point(881, 600);
-            this.BtnSuaHS.Name = "BtnSuaHS";
-            this.BtnSuaHS.Size = new System.Drawing.Size(86, 37);
-            this.BtnSuaHS.TabIndex = 8;
-            this.BtnSuaHS.Text = "Sửa";
-            this.BtnSuaHS.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnSuaHS.UseVisualStyleBackColor = false;
-            this.BtnSuaHS.Click += new System.EventHandler(this.BtnSuaHS_Click);
-            // 
-            // BtnThemHS
-            // 
-            this.BtnThemHS.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnThemHS.Image = global::QL_GiaoVien_HocSinh.Properties.Resources.Add_32x32;
-            this.BtnThemHS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnThemHS.Location = new System.Drawing.Point(789, 600);
-            this.BtnThemHS.Name = "BtnThemHS";
-            this.BtnThemHS.Size = new System.Drawing.Size(86, 37);
-            this.BtnThemHS.TabIndex = 7;
-            this.BtnThemHS.Text = "Thêm";
-            this.BtnThemHS.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnThemHS.UseVisualStyleBackColor = false;
-            this.BtnThemHS.Click += new System.EventHandler(this.BtnThemHS_Click);
-            // 
-            // BtnThoatGV
-            // 
-            this.BtnThoatGV.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnThoatGV.Image = global::QL_GiaoVien_HocSinh.Properties.Resources.Cancel_32x32;
-            this.BtnThoatGV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnThoatGV.Location = new System.Drawing.Point(1163, 600);
-            this.BtnThoatGV.Name = "BtnThoatGV";
-            this.BtnThoatGV.Size = new System.Drawing.Size(86, 37);
-            this.BtnThoatGV.TabIndex = 6;
-            this.BtnThoatGV.Text = "Thoát";
-            this.BtnThoatGV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnThoatGV.UseVisualStyleBackColor = false;
-            this.BtnThoatGV.Click += new System.EventHandler(this.BtnThoatGV_Click);
-            // 
-            // BtnTimKiemGV
-            // 
-            this.BtnTimKiemGV.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnTimKiemGV.Image = global::QL_GiaoVien_HocSinh.Properties.Resources.Zoom_32x32;
-            this.BtnTimKiemGV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnTimKiemGV.Location = new System.Drawing.Point(1065, 600);
-            this.BtnTimKiemGV.Name = "BtnTimKiemGV";
-            this.BtnTimKiemGV.Size = new System.Drawing.Size(97, 37);
-            this.BtnTimKiemGV.TabIndex = 5;
-            this.BtnTimKiemGV.Text = "Tìm Kiếm";
-            this.BtnTimKiemGV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnTimKiemGV.UseVisualStyleBackColor = false;
-            this.BtnTimKiemGV.Click += new System.EventHandler(this.BtnTimKiemGV_Click);
-            // 
-            // BtnXoaGV
-            // 
-            this.BtnXoaGV.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnXoaGV.Image = global::QL_GiaoVien_HocSinh.Properties.Resources.Clear_32x32;
-            this.BtnXoaGV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnXoaGV.Location = new System.Drawing.Point(973, 600);
-            this.BtnXoaGV.Name = "BtnXoaGV";
-            this.BtnXoaGV.Size = new System.Drawing.Size(86, 37);
-            this.BtnXoaGV.TabIndex = 4;
-            this.BtnXoaGV.Text = "Xóa";
-            this.BtnXoaGV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnXoaGV.UseVisualStyleBackColor = false;
-            this.BtnXoaGV.Click += new System.EventHandler(this.BtnXoaGV_Click);
-            // 
-            // BtnSuaGV
-            // 
-            this.BtnSuaGV.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnSuaGV.Image = global::QL_GiaoVien_HocSinh.Properties.Resources.PictureShapeOutlineColor_32x32;
-            this.BtnSuaGV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnSuaGV.Location = new System.Drawing.Point(881, 600);
-            this.BtnSuaGV.Name = "BtnSuaGV";
-            this.BtnSuaGV.Size = new System.Drawing.Size(86, 37);
-            this.BtnSuaGV.TabIndex = 3;
-            this.BtnSuaGV.Text = "Sửa";
-            this.BtnSuaGV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnSuaGV.UseVisualStyleBackColor = false;
-            this.BtnSuaGV.Click += new System.EventHandler(this.BtnSuaGV_Click);
-            // 
-            // BtnThemGV
-            // 
-            this.BtnThemGV.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnThemGV.Image = global::QL_GiaoVien_HocSinh.Properties.Resources.Add_32x32;
-            this.BtnThemGV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnThemGV.Location = new System.Drawing.Point(789, 600);
-            this.BtnThemGV.Name = "BtnThemGV";
-            this.BtnThemGV.Size = new System.Drawing.Size(86, 37);
-            this.BtnThemGV.TabIndex = 2;
-            this.BtnThemGV.Text = "Thêm";
-            this.BtnThemGV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnThemGV.UseVisualStyleBackColor = false;
-            this.BtnThemGV.Click += new System.EventHandler(this.BtnThemGV_Click);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(48, 59);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(70, 15);
-            this.label14.TabIndex = 1;
-            this.label14.Text = "Hướng Dẫn";
-            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -783,6 +805,7 @@ namespace QL_GiaoVien_HocSinh
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
+            this.Load += new System.EventHandler(this.FrmMain_Load);
             this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -841,7 +864,7 @@ namespace QL_GiaoVien_HocSinh
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnThoatQL_GD;
         private System.Windows.Forms.Button btnCapNhat;
-        private System.Windows.Forms.TextBox tbQuanLyGD_ThuTiet;
+        private System.Windows.Forms.TextBox tbQuanLyGD_Thu;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox tbQuanLyGD_GiaoVienTen;
         private System.Windows.Forms.TextBox tbQuanLyGD_TenMonHoc;
@@ -864,6 +887,8 @@ namespace QL_GiaoVien_HocSinh
         private System.Windows.Forms.DateTimePicker dtpNgayKT;
         private System.Windows.Forms.DateTimePicker dtpNgayBD;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox tbQuanLyGD_Tiet;
     }
 }
 

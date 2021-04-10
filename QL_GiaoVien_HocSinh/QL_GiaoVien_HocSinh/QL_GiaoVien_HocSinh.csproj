@@ -46,7 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\Controllers.cs" />
     <Compile Include="Controller\DataAccess.cs" />
+    <Compile Include="Models\GiaoVien.cs" />
+    <Compile Include="Models\HocSinh.cs" />
+    <Compile Include="Models\LopHocPhan.cs" />
     <Compile Include="View\DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>

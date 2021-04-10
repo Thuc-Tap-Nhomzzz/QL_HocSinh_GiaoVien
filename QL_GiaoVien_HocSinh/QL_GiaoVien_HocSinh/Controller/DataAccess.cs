@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QuanLyHocSinh.Model
+namespace QL_GiaoVien_HocSinh.Models
 {
     class DataAccess
     {
