@@ -11,7 +11,7 @@ namespace QL_GiaoVien_HocSinh.Models
     class DataAccess
     {
         static readonly string constr = @"Data Source=.\sqlexpress; Initial Catalog=QL_HocSinh_GiaoVien;Integrated Security=True";
-        private static readonly SqlConnection con = new SqlConnection(constr);
+        private static SqlConnection con = new SqlConnection(constr);
         public DataTable Query(string sql, params SqlParameter[] pr)
         {
             SqlDataAdapter da = null;
