@@ -16,7 +16,7 @@ namespace QL_GiaoVien_HocSinh
     public partial class FrmMain : Form
     {
         Controllers _control = new Controllers();
-        
+
         public FrmMain()
         {
             InitializeComponent();
@@ -24,8 +24,8 @@ namespace QL_GiaoVien_HocSinh
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-           Load_gv();
-           Load_hs();
+            Load_gv();
+            Load_hs();
             Load_quanly();
         }
         private void BtnQLHS_Click(object sender, EventArgs e)
@@ -89,7 +89,6 @@ namespace QL_GiaoVien_HocSinh
             tabControl.SelectedTab = tabPage1;
         }
         #region học sinh
-        private string str { get; set; }
         HocSinh hs = new HocSinh();
         private void Load_hs()
         {
@@ -105,28 +104,72 @@ namespace QL_GiaoVien_HocSinh
             dataGridViewQL_HS.Columns["Email"].HeaderText = "Email";
             dataGridViewQL_HS.Columns["DanToc"].HeaderText = "Dân Tộc";
             dataGridViewQL_HS.Columns["SoDienThoai"].HeaderText = "Điện thoại";
-            //dtgDanhSachHS.Columns["ma"].Width = 100;
-            //dtgDanhSachHS.Columns["ten"].Width = 200;
-            //dtgDanhSachHS.Columns["email"].Width = 200;
-            //dtgDanhSachHS.Columns["gioitinh"].Width = 90;
-            //dtgDanhSachHS.Columns["ngaysinh"].Width = 100;
-            //dtgDanhSachHS.Columns["Lopma"].Width = 150;
-            //dtgDanhSachHS.Columns["DiaChi"].Width = 150;
+            //dataGridViewQL_HS.Columns["ma"].Width = 100;
+            //dataGridViewQL_HS.Columns["ten"].Width = 200;
+            //dataGridViewQL_HS.Columns["email"].Width = 200;
+            //dataGridViewQL_HS.Columns["gioitinh"].Width = 90;
+            //dataGridViewQL_HS.Columns["ngaysinh"].Width = 100;
+            //dataGridViewQL_HS.Columns["Lopma"].Width = 150;
+            //dataGridViewQL_HS.Columns["DiaChi"].Width = 150;
         }
+       
+        public void Load_lai_hs()
+        {
+            dataGridViewQL_HS.DataSource = _control.getListHocSinh();
+        }
+        #region Phần của Nghĩa
         private void BtnThemHS_Click(object sender, EventArgs e)
         {
             (new ThemHS()).ShowDialog();
+            Load_lai_hs();
         }
-
+        #endregion
+        #region Phần của Chung
         private void BtnSuaHS_Click(object sender, EventArgs e)
         {
-            (new SuaHS()).ShowDialog();
-        }
+            //ma, ten, gt, ns, mail,dantoc,dt,malop, diachi
+            hs.Ma = dataGridViewQL_HS.Rows[dataGridViewQL_HS.CurrentRow.Index].Cells[0].Value.ToString();
+            hs.Ten = dataGridViewQL_HS.Rows[dataGridViewQL_HS.CurrentRow.Index].Cells[1].Value.ToString();
+            hs.GioiTinh = 1;
+            /*if (bool.Parse(dataGridViewQL_HS.Rows[dataGridViewQL_HS.CurrentRow.Index].Cells[2].Value.ToString()))
+            {
+                hs.GioiTinh = 1;
+            }
+            else hs.GioiTinh = 0;*/
+            DateTime ns = DateTime.Now;
+            if (DateTime.TryParse(dataGridViewQL_HS.Rows[dataGridViewQL_HS.CurrentRow.Index].Cells[3].Value.ToString(), out ns))
+            {
+                hs.NgaySinh = ns;
+            }
+            hs.NgaySinh = ns;
+            hs.Email = dataGridViewQL_HS.Rows[dataGridViewQL_HS.CurrentRow.Index].Cells[4].Value.ToString();
+            hs.DanToc = dataGridViewQL_HS.Rows[dataGridViewQL_HS.CurrentRow.Index].Cells[5].Value.ToString();
 
+            hs.SoDienThoai = dataGridViewQL_HS.Rows[dataGridViewQL_HS.CurrentRow.Index].Cells[6].Value.ToString();
+            hs.LopMa = dataGridViewQL_HS.Rows[dataGridViewQL_HS.CurrentRow.Index].Cells[7].Value.ToString();
+            hs.DiaChi = dataGridViewQL_HS.Rows[dataGridViewQL_HS.CurrentRow.Index].Cells[8].Value.ToString();
+
+            (new SuaHS(hs)).ShowDialog();
+            Load_lai_hs();
+        }
+        #endregion
+        #region Phần của anh Trung
         private void BtnXoaHS_Click(object sender, EventArgs e)
         {
-           
+            hs.Ma = dataGridViewQL_HS.Rows[dataGridViewQL_HS.CurrentRow.Index].Cells[0].Value.ToString();
+            hs.Ten = dataGridViewQL_HS.Rows[dataGridViewQL_HS.CurrentRow.Index].Cells[1].Value.ToString();
+            DialogResult xoa = MessageBox.Show("Bạn chắc chắn muốn xóa Học sinh: " + hs.Ten + " có mã là: " + hs.Ma + " chứ", "Cảnh Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            //bool xoahs = _control.XoaHS(hs.Ma);
+            if (_control.XoaHS(hs.Ma) && xoa == DialogResult.Yes)
+            {
+                DialogResult result = MessageBox.Show("Thành công", "Xóa", MessageBoxButtons.OK);
+                if (result == DialogResult.OK)
+                {
+                    Load_lai_hs();
+                }
+            }
         }
+        #endregion
         private void BtnTimKiemHS_Click(object sender, EventArgs e)
         {
             (new TimKiem()).ShowDialog();
@@ -145,7 +188,7 @@ namespace QL_GiaoVien_HocSinh
             dataGridViewQL_GV.Columns["GioiTinh"].HeaderText = "Giới tính";
             dataGridViewQL_GV.Columns["Email"].HeaderText = "Email";
             dataGridViewQL_GV.Columns["SoDienThoai"].HeaderText = "Điện thoại";
-            dataGridViewQL_GV.Columns["BoMonMa"].HeaderText = "Mã Bộ Môn";
+            dataGridViewQL_GV.Columns["BoMonMa"].HeaderText = "Bộ Môn";
             dataGridViewQL_GV.Columns["NhiemVu"].HeaderText = "Nhiệm vụ";
             dataGridViewQL_GV.Columns["Luong"].HeaderText = "Lương";
             /* dataGridViewQL_GV.Columns["Ma"].Width = 100;
@@ -155,26 +198,70 @@ namespace QL_GiaoVien_HocSinh
              dataGridViewQL_GV.Columns["NgaySinh"].Width = 100;
              dataGridViewQL_GV.Columns["BoMonMa"].Width = 100;*/
         }
+        public void Load_lai_gv()
+        {
+            dataGridViewQL_GV.DataSource = _control.getListGiaoVien();
+        }
+        #region Phần của Nghĩa
         private void BtnThemGV_Click(object sender, EventArgs e)
         {
             (new ThemGV()).ShowDialog();
+            Load_lai_gv();
         }
-
+        #endregion
+        #region Phần của Chung
         private void BtnSuaGV_Click(object sender, EventArgs e)
         {
-            (new SuaGV()).ShowDialog();
+            // max, teen, gioi tinh, ngayf sinh, email, luong, nhiemvu, dt, mabm
+            GiaoVien gv = new GiaoVien();
+            int index = dataGridViewQL_GV.CurrentCell == null ? -1 : dataGridViewQL_GV.CurrentCell.RowIndex;
+            if (index != -1)
+            {
+                gv.Ma = dataGridViewQL_GV.Rows[index].Cells[0].Value.ToString();
+                gv.Ten = dataGridViewQL_GV.Rows[index].Cells[1].Value.ToString();
+                gv.GioiTinh = 1;
+                /*if (bool.Parse(dataGridViewQL_GV.Rows[index].Cells[2].Value.ToString()))
+                {
+                    gv.GioiTinh = 1;
+                }
+                else gv.GioiTinh = 0;*/
+                DateTime ns = DateTime.Now;
+                if (DateTime.TryParse(dataGridViewQL_GV.Rows[index].Cells[3].Value.ToString(), out ns))
+                {
+                    gv.NgaySinh = ns;
+                }
+                gv.Email = dataGridViewQL_GV.Rows[index].Cells[4].Value.ToString();
+                gv.Luong = int.Parse(dataGridViewQL_GV.Rows[index].Cells[5].Value.ToString());
+                gv.NhiemVu = dataGridViewQL_GV.Rows[index].Cells[6].Value.ToString();
+                gv.SoDienThoai = dataGridViewQL_GV.Rows[index].Cells[7].Value.ToString();
+                gv.BoMonMa = dataGridViewQL_GV.Rows[index].Cells[8].Value.ToString();
+            }
+            (new SuaGV(gv)).ShowDialog();
+            Load_lai_gv();
         }
-
+        #endregion
+        #region Phần của anh Trung
+        private void BtnXoaGV_Click(object sender, EventArgs e)
+        {
+            GiaoVien gv = new GiaoVien();
+            gv.Ma = dataGridViewQL_GV.Rows[dataGridViewQL_GV.CurrentRow.Index].Cells[0].Value.ToString();
+            //gv.Ten = dataGridViewQL_GV.Rows[dataGridViewQL_GV.CurrentRow.Index].Cells[1].Value.ToString();
+            DialogResult xoa = MessageBox.Show( "Bạn chắc chắn muốn xóa Giáo Viên: " + gv.Ten + " có mã là: " + gv.Ma+ " chứ", "Cảnh Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            //bool xoagv = _control.XoaGV(gv.Ma);
+            if (_control.XoaGV(gv.Ma) && xoa == DialogResult.Yes)
+            {
+                DialogResult result = MessageBox.Show("Thành công", "Xóa", MessageBoxButtons.OK);
+                if (result == DialogResult.OK)
+                {
+                    Load_lai_gv();
+                }
+            }
+        }
+        #endregion
         private void BtnTimKiemGV_Click(object sender, EventArgs e)
         {
             (new TimKiem()).ShowDialog();
         }
-
-        private void BtnXoaGV_Click(object sender, EventArgs e)
-        {
-
-        }
-
         #endregion
 
         #region Giảng Dạy
@@ -202,7 +289,38 @@ namespace QL_GiaoVien_HocSinh
             dataGridViewQL_GiangDay.Columns["GiaoVienTen"].Width = 150;
             dataGridViewQL_GiangDay.Columns["Ten"].Width = 150;
         }
-        #endregion
+        private void dataGridViewQL_GiangDay_SelectionChanged(object sender, EventArgs e)
+        {
+            // Mã lớp học phần, tên môn học, mã môn học, học kỳ, năm học, sĩ số, thứ, tiết,
+            // ngày bắt đầu, ngày kết thuc, ngày thi, mã giáo viên, giáo viên
+            tbQuanLyGD_MaLHP.Enabled = false;
+            tbQuanLyGD_TenMonHoc.Enabled = false;
+            tbQuanLyGD_GiaoVienMa.Enabled = false;
+            tbQuanLyGD_GiaoVienTen.Enabled = false;
+            tbQuanLyGD_MaLHP.Enabled = false;
+            tbQuanLyGD_MaLHP.Enabled = false;
+            tbQuanLyGD_MaLHP.Enabled = false;
+            int index = dataGridViewQL_GiangDay.CurrentCell == null ? -1 : dataGridViewQL_GiangDay.CurrentCell.RowIndex;
+            if (index != -1)
+            {
+                tbQuanLyGD_MaLHP.Text = dataGridViewQL_GiangDay.Rows[index].Cells[0].Value.ToString();
+                tbQuanLyGD_TenMonHoc.Text = dataGridViewQL_GiangDay.Rows[index].Cells[1].Value.ToString();
+                tbQuanLyGD_HocKy.Text = dataGridViewQL_GiangDay.Rows[index].Cells[3].Value.ToString();
+                tbQuanLyGD_NamHoc.Text = dataGridViewQL_GiangDay.Rows[index].Cells[4].Value.ToString();
+                tbQuanLyGD_SiSo.Text = dataGridViewQL_GiangDay.Rows[index].Cells[5].Value.ToString();
+                tbQuanLyGD_Thu.Text = dataGridViewQL_GiangDay.Rows[index].Cells[6].Value.ToString();
+                tbQuanLyGD_Tiet.Text = dataGridViewQL_GiangDay.Rows[index].Cells[7].Value.ToString();
+                dtpNgayBD.Text = dataGridViewQL_GiangDay.Rows[index].Cells[8].Value.ToString();
+                dtpNgayKT.Text = dataGridViewQL_GiangDay.Rows[index].Cells[9].Value.ToString();
+                dtpNgayThi.Text = dataGridViewQL_GiangDay.Rows[index].Cells[10].Value.ToString();
+                tbQuanLyGD_GiaoVienMa.Text = dataGridViewQL_GiangDay.Rows[index].Cells[11].Value.ToString();
+                tbQuanLyGD_GiaoVienTen.Text = dataGridViewQL_GiangDay.Rows[index].Cells[12].Value.ToString();
 
+            }
+        }
+            #endregion
+
+
+        
     }
 }
