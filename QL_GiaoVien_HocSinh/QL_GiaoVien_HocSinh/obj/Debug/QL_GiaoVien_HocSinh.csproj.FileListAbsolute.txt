@@ -14,3 +14,16 @@ E:\Thuc tap nhom\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\obj
 E:\Thuc tap nhom\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\obj\Debug\QL_GiaoVien_HocSinh.View.SuaGV.resources
 E:\Thuc tap nhom\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\obj\Debug\QL_GiaoVien_HocSinh.View.SuaHS.resources
 E:\Thuc tap nhom\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\obj\Debug\QL_GiaoVien_HocSinh.View.TimKiem.resources
+E:\Github\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\obj\Debug\QL_GiaoVien_HocSinh.csprojAssemblyReference.cache
+E:\Github\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\obj\Debug\QL_GiaoVien_HocSinh.View.DangNhap.resources
+E:\Github\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\obj\Debug\QL_GiaoVien_HocSinh.FrmMain.resources
+E:\Github\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\obj\Debug\QL_GiaoVien_HocSinh.Properties.Resources.resources
+E:\Github\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\obj\Debug\QL_GiaoVien_HocSinh.View.SuaGV.resources
+E:\Github\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\obj\Debug\QL_GiaoVien_HocSinh.View.SuaHS.resources
+E:\Github\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\obj\Debug\QL_GiaoVien_HocSinh.View.ThemGV.resources
+E:\Github\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\obj\Debug\QL_GiaoVien_HocSinh.View.ThemHS.resources
+E:\Github\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\obj\Debug\QL_GiaoVien_HocSinh.View.TimKiem.resources
+E:\Github\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\obj\Debug\QL_GiaoVien_HocSinh.csproj.GenerateResource.cache
+E:\Github\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\obj\Debug\QL_GiaoVien_HocSinh.csproj.CoreCompileInputs.cache
+E:\Github\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\obj\Debug\QL_GiaoVien_HocSinh.exe
+E:\Github\QL_HocSinh_GiaoVien\QL_GiaoVien_HocSinh\QL_GiaoVien_HocSinh\obj\Debug\QL_GiaoVien_HocSinh.pdb
