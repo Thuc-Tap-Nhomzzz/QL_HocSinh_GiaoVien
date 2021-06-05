@@ -212,9 +212,6 @@ namespace QL_GiaoVien_HocSinh.Controller
                 new SqlParameter("Email", hs.Email),
                 new SqlParameter("SoDienThoai",hs.SoDienThoai)
 
-
-
-
         };
             da.Query("proc_insertHS", paraHS);
             return true;

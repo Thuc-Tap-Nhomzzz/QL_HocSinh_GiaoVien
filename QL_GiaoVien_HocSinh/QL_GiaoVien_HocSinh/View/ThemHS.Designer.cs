@@ -59,7 +59,7 @@ namespace QL_GiaoVien_HocSinh.View
             this.cbbLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbLop.FormattingEnabled = true;
             this.cbbLop.Location = new System.Drawing.Point(171, 160);
-            this.cbbLop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbbLop.Margin = new System.Windows.Forms.Padding(4);
             this.cbbLop.Name = "cbbLop";
             this.cbbLop.Size = new System.Drawing.Size(247, 24);
             this.cbbLop.TabIndex = 117;
@@ -67,7 +67,7 @@ namespace QL_GiaoVien_HocSinh.View
             // txtSDT
             // 
             this.txtSDT.Location = new System.Drawing.Point(171, 411);
-            this.txtSDT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSDT.Margin = new System.Windows.Forms.Padding(4);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(247, 22);
             this.txtSDT.TabIndex = 116;
@@ -76,7 +76,7 @@ namespace QL_GiaoVien_HocSinh.View
             // 
             this.txtEmail.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(171, 368);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(247, 25);
             this.txtEmail.TabIndex = 115;
@@ -108,7 +108,7 @@ namespace QL_GiaoVien_HocSinh.View
             this.rdbnam.AutoSize = true;
             this.rdbnam.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbnam.Location = new System.Drawing.Point(171, 244);
-            this.rdbnam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdbnam.Margin = new System.Windows.Forms.Padding(4);
             this.rdbnam.Name = "rdbnam";
             this.rdbnam.Size = new System.Drawing.Size(60, 21);
             this.rdbnam.TabIndex = 112;
@@ -121,7 +121,7 @@ namespace QL_GiaoVien_HocSinh.View
             this.rdbNu.AutoSize = true;
             this.rdbNu.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbNu.Location = new System.Drawing.Point(292, 244);
-            this.rdbNu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdbNu.Margin = new System.Windows.Forms.Padding(4);
             this.rdbNu.Name = "rdbNu";
             this.rdbNu.Size = new System.Drawing.Size(49, 21);
             this.rdbNu.TabIndex = 111;
@@ -134,7 +134,7 @@ namespace QL_GiaoVien_HocSinh.View
             this.btnThoat.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnThoat.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.Location = new System.Drawing.Point(319, 490);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(100, 37);
             this.btnThoat.TabIndex = 110;
@@ -147,7 +147,7 @@ namespace QL_GiaoVien_HocSinh.View
             this.btnAdd.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnAdd.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(63, 490);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(100, 37);
             this.btnAdd.TabIndex = 109;
@@ -171,7 +171,7 @@ namespace QL_GiaoVien_HocSinh.View
             this.dtpNgaySinh.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgaySinh.Location = new System.Drawing.Point(171, 197);
-            this.dtpNgaySinh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpNgaySinh.Margin = new System.Windows.Forms.Padding(4);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(247, 25);
             this.dtpNgaySinh.TabIndex = 106;
@@ -180,7 +180,7 @@ namespace QL_GiaoVien_HocSinh.View
             // 
             this.txtDiaChi.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaChi.Location = new System.Drawing.Point(171, 325);
-            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(247, 25);
             this.txtDiaChi.TabIndex = 105;
@@ -200,7 +200,7 @@ namespace QL_GiaoVien_HocSinh.View
             // 
             this.txtDanToc.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDanToc.Location = new System.Drawing.Point(171, 282);
-            this.txtDanToc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDanToc.Margin = new System.Windows.Forms.Padding(4);
             this.txtDanToc.Name = "txtDanToc";
             this.txtDanToc.Size = new System.Drawing.Size(247, 25);
             this.txtDanToc.TabIndex = 103;
@@ -209,7 +209,7 @@ namespace QL_GiaoVien_HocSinh.View
             // 
             this.txtHoTenHS.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHoTenHS.Location = new System.Drawing.Point(171, 123);
-            this.txtHoTenHS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtHoTenHS.Margin = new System.Windows.Forms.Padding(4);
             this.txtHoTenHS.Name = "txtHoTenHS";
             this.txtHoTenHS.Size = new System.Drawing.Size(247, 25);
             this.txtHoTenHS.TabIndex = 102;
@@ -219,7 +219,7 @@ namespace QL_GiaoVien_HocSinh.View
             this.txtMaHS.Enabled = false;
             this.txtMaHS.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaHS.Location = new System.Drawing.Point(171, 86);
-            this.txtMaHS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaHS.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaHS.Name = "txtMaHS";
             this.txtMaHS.Size = new System.Drawing.Size(247, 25);
             this.txtMaHS.TabIndex = 101;
@@ -334,10 +334,9 @@ namespace QL_GiaoVien_HocSinh.View
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ThemHS";
             this.Text = "Thêm Học Sinh";
-            this.Load += new System.EventHandler(this.ThemHS_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

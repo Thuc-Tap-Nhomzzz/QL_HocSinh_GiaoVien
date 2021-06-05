@@ -38,7 +38,8 @@ namespace QL_GiaoVien_HocSinh.View
                 if (rdbnam.Checked)
                     hs.GioiTinh = 1;
                 else hs.GioiTinh = 0;
-                hs.LopMa = _control.getMaLopHocPhan(cbbLop.Text.ToString().Trim()).ToString();
+                hs.LopMa = cbbLop.Text.ToString().Trim();
+                //hs.LopMa = _control.getMaLopHocPhan(cbbLop.Text.ToString().Trim()).ToString();
                 hs.SoDienThoai = txtSDT.Text.ToString().Trim();
                 hs.Email = txtEmail.Text.ToString().Trim();
                 hs.DanToc = txtDanToc.Text.ToString().Trim();
@@ -85,9 +86,6 @@ namespace QL_GiaoVien_HocSinh.View
             }
             return true;
         }
-        private void ThemHS_Load(object sender, EventArgs e)
-        {
-            cbbLop.DataSource = _control.getMaLopHocPhan();
-        }
+        
     }
 }

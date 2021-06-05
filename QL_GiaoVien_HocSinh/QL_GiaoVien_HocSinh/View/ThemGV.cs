@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QL_GiaoVien_HocSinh.Models;
+using QL_GiaoVien_HocSinh.View;
+using QL_GiaoVien_HocSinh.Controller;
 
 namespace QL_GiaoVien_HocSinh.View
 {
     public partial class ThemGV : Form
     {
+        Controllers _control = new Controllers();
         public ThemGV()
         {
             InitializeComponent();
@@ -20,6 +24,89 @@ namespace QL_GiaoVien_HocSinh.View
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (checkAdd())
+            {
+                GiaoVien gv = new GiaoVien();
+                gv.Ma = txtMaGV.Text.ToString().Trim();
+                gv.Ten = txtHoTenGV.Text.ToString().Trim();
+                if (rbdNam.Checked) gv.GioiTinh = 1;
+                else gv.GioiTinh = 0;
+                gv.NgaySinh = DateTime.Parse(dtpNgaySinh.Value.ToShortDateString());
+                gv.Email = txtEmail.Text.ToString().Trim();
+                gv.Luong = int.Parse(txtLuong.Text.ToString().Trim());
+                gv.NhiemVu = txtNhiemVu.Text.ToString().Trim();
+                gv.SoDienThoai = txtSDT.Text.ToString().Trim();
+                gv.BoMonMa = _control.getMaBoMon(cbbBoMon.Text);
+
+                bool themgv = _control.ThemGV(gv);
+                if (themgv == true)
+                {
+                    DialogResult result = MessageBox.Show("Thành công", "Chỉnh sửa", MessageBoxButtons.OK);
+                    if (result == DialogResult.OK)
+                    {
+                        btnThoat_Click(sender, e);
+                    }
+                }
+            }
+        }
+        private bool checkAdd()
+        {
+
+            if (txtMaGV.Text.ToString().Trim().Equals(""))
+            {
+                MessageBox.Show("bạn chưa nhập mã giáo viên!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (DateTime.Parse(dtpNgaySinh.Value.ToShortDateString()) == DateTime.Now)
+            {
+                MessageBox.Show("bạn chưa nhập chọn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (!(rbdNam.Checked || rbdNu.Checked))
+            {
+                MessageBox.Show("bạn chưa nhập chọn giới tính!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (txtEmail.Text.ToString().Trim().Equals(""))
+            {
+                MessageBox.Show("bạn chưa nhập Mail!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (txtHoTenGV.Text.ToString().Trim().Equals(""))
+            {
+                MessageBox.Show("bạn chưa nhập họ tên giáo viên!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+
+            }
+            if (txtLuong.Text.ToString().Trim().Equals(""))
+            {
+                MessageBox.Show("bạn chưa nhập lương!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (txtNhiemVu.Text.ToString().Trim().Equals(""))
+            {
+                MessageBox.Show("bạn chưa nhập nhiệm vụ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (txtSDT.Text.ToString().Trim().Equals(""))
+            {
+                MessageBox.Show("bạn chưa nhập số điện thoại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (cbbBoMon.Text.ToString().Trim().Equals(""))
+            {
+                MessageBox.Show("bạn chưa chọn Bộ Môn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+
         }
     }
 }
