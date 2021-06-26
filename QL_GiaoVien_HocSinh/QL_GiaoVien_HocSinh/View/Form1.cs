@@ -120,7 +120,7 @@ namespace QL_GiaoVien_HocSinh
         #region Phần của Nghĩa
         private void BtnThemHS_Click(object sender, EventArgs e)
         {
-            (new ThemHS()).ShowDialog();
+            (new ThemHS(dataGridViewQL_HS)).ShowDialog();
             Load_lai_hs();
         }
         #endregion
@@ -160,19 +160,29 @@ namespace QL_GiaoVien_HocSinh
             hs.Ten = dataGridViewQL_HS.Rows[dataGridViewQL_HS.CurrentRow.Index].Cells[1].Value.ToString();
             DialogResult xoa = MessageBox.Show("Bạn chắc chắn muốn xóa Học sinh: " + hs.Ten + " có mã là: " + hs.Ma + " chứ", "Cảnh Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             //bool xoahs = _control.XoaHS(hs.Ma);
-            if (_control.XoaHS(hs.Ma) && xoa == DialogResult.Yes)
+            if(xoa == DialogResult.Yes)
             {
-                DialogResult result = MessageBox.Show("Thành công", "Xóa", MessageBoxButtons.OK);
-                if (result == DialogResult.OK)
+                if (_control.XoaHS(hs.Ma))
                 {
+                    DialogResult result = MessageBox.Show("Thành công", "Xóa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (result == DialogResult.OK)
+                    {
+                        Load_lai_hs();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Xóa Thất bại, xin bạn xem lại thao tác!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Load_lai_hs();
                 }
-            }
+            }    
+            
         }
         #endregion
         private void BtnTimKiemHS_Click(object sender, EventArgs e)
         {
-            (new TimKiem()).ShowDialog();
+            string a = "hocsinh";
+            (new TimKiem(a)).ShowDialog();
         }
         #endregion
 
@@ -205,7 +215,7 @@ namespace QL_GiaoVien_HocSinh
         #region Phần của Nghĩa
         private void BtnThemGV_Click(object sender, EventArgs e)
         {
-            (new ThemGV()).ShowDialog();
+            (new ThemGV(dataGridViewQL_GV)).ShowDialog();
             Load_lai_gv();
         }
         #endregion
@@ -245,22 +255,32 @@ namespace QL_GiaoVien_HocSinh
         {
             GiaoVien gv = new GiaoVien();
             gv.Ma = dataGridViewQL_GV.Rows[dataGridViewQL_GV.CurrentRow.Index].Cells[0].Value.ToString();
-            //gv.Ten = dataGridViewQL_GV.Rows[dataGridViewQL_GV.CurrentRow.Index].Cells[1].Value.ToString();
+            gv.Ten = dataGridViewQL_GV.Rows[dataGridViewQL_GV.CurrentRow.Index].Cells[1].Value.ToString();
             DialogResult xoa = MessageBox.Show( "Bạn chắc chắn muốn xóa Giáo Viên: " + gv.Ten + " có mã là: " + gv.Ma+ " chứ", "Cảnh Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             //bool xoagv = _control.XoaGV(gv.Ma);
-            if (_control.XoaGV(gv.Ma) && xoa == DialogResult.Yes)
+            if(xoa == DialogResult.Yes)
             {
-                DialogResult result = MessageBox.Show("Thành công", "Xóa", MessageBoxButtons.OK);
-                if (result == DialogResult.OK)
+                if (_control.XoaGV(gv.Ma))
                 {
+                    DialogResult result = MessageBox.Show("Thành công", "Xóa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (result == DialogResult.OK)
+                    {
+                        Load_lai_gv();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Xóa Thất bại, xin bạn xem lại thao tác!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Load_lai_gv();
                 }
-            }
+            }    
+            
         }
         #endregion
         private void BtnTimKiemGV_Click(object sender, EventArgs e)
         {
-            (new TimKiem()).ShowDialog();
+            string a = "giaovien";
+            (new TimKiem(a)).ShowDialog();
         }
         #endregion
 
@@ -288,6 +308,12 @@ namespace QL_GiaoVien_HocSinh
             dataGridViewQL_GiangDay.Columns["Tiet"].Width = 45;
             dataGridViewQL_GiangDay.Columns["GiaoVienTen"].Width = 150;
             dataGridViewQL_GiangDay.Columns["Ten"].Width = 150;
+            cbQuanLyGD_GiaoVienMa.DataSource = _control.getMaGV();
+        }
+        public void Load_lai_quanly()
+        {
+            dataGridViewQL_GiangDay.DataSource = _control.getList_Lophophan();
+            cbQuanLyGD_GiaoVienMa.DataSource = _control.getMaGV();
         }
         private void dataGridViewQL_GiangDay_SelectionChanged(object sender, EventArgs e)
         {
@@ -295,7 +321,7 @@ namespace QL_GiaoVien_HocSinh
             // ngày bắt đầu, ngày kết thuc, ngày thi, mã giáo viên, giáo viên
             tbQuanLyGD_MaLHP.Enabled = false;
             tbQuanLyGD_TenMonHoc.Enabled = false;
-            tbQuanLyGD_GiaoVienMa.Enabled = false;
+            cbQuanLyGD_GiaoVienMa.Enabled = true;
             tbQuanLyGD_GiaoVienTen.Enabled = false;
             tbQuanLyGD_MaLHP.Enabled = false;
             tbQuanLyGD_MaLHP.Enabled = false;
@@ -305,7 +331,7 @@ namespace QL_GiaoVien_HocSinh
             {
                 tbQuanLyGD_MaLHP.Text = dataGridViewQL_GiangDay.Rows[index].Cells[0].Value.ToString();
                 tbQuanLyGD_TenMonHoc.Text = dataGridViewQL_GiangDay.Rows[index].Cells[1].Value.ToString();
-                tbQuanLyGD_HocKy.Text = dataGridViewQL_GiangDay.Rows[index].Cells[3].Value.ToString();
+                cbQuanLyGD_HocKy.Text = dataGridViewQL_GiangDay.Rows[index].Cells[3].Value.ToString();
                 tbQuanLyGD_NamHoc.Text = dataGridViewQL_GiangDay.Rows[index].Cells[4].Value.ToString();
                 tbQuanLyGD_SiSo.Text = dataGridViewQL_GiangDay.Rows[index].Cells[5].Value.ToString();
                 tbQuanLyGD_Thu.Text = dataGridViewQL_GiangDay.Rows[index].Cells[6].Value.ToString();
@@ -313,14 +339,44 @@ namespace QL_GiaoVien_HocSinh
                 dtpNgayBD.Text = dataGridViewQL_GiangDay.Rows[index].Cells[8].Value.ToString();
                 dtpNgayKT.Text = dataGridViewQL_GiangDay.Rows[index].Cells[9].Value.ToString();
                 dtpNgayThi.Text = dataGridViewQL_GiangDay.Rows[index].Cells[10].Value.ToString();
-                tbQuanLyGD_GiaoVienMa.Text = dataGridViewQL_GiangDay.Rows[index].Cells[11].Value.ToString();
+                cbQuanLyGD_GiaoVienMa.Text = dataGridViewQL_GiangDay.Rows[index].Cells[11].Value.ToString();
                 tbQuanLyGD_GiaoVienTen.Text = dataGridViewQL_GiangDay.Rows[index].Cells[12].Value.ToString();
 
             }
         }
-            #endregion
+
+        private void cbQuanLyGD_GiaoVienMa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tbQuanLyGD_GiaoVienTen.Text = _control.getTenGV(cbQuanLyGD_GiaoVienMa.Text);
+        }
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            LopHocPhan lophocphan = new LopHocPhan();
+            lophocphan.Ma = tbQuanLyGD_MaLHP.Text;
+            lophocphan.Ten = tbQuanLyGD_TenMonHoc.Text;
+            lophocphan.HocKy = cbQuanLyGD_HocKy.Text;
+            lophocphan.NamHoc = tbQuanLyGD_NamHoc.Text;
+            lophocphan.SiSo = int.Parse(tbQuanLyGD_SiSo.Text);
+            lophocphan.Thu = tbQuanLyGD_Thu.Text;
+            lophocphan.Tiet = tbQuanLyGD_Tiet.Text;
+            lophocphan.NgayBatDau = DateTime.Parse(dtpNgayBD.Text);
+            lophocphan.NgayKetThuc = DateTime.Parse(dtpNgayKT.Text);
+            lophocphan.NgayThi = DateTime.Parse(dtpNgayThi.Text);
+            lophocphan.GiaoVienMa = cbQuanLyGD_GiaoVienMa.Text;
+            if(_control.update_LHP(lophocphan))
+            {
+                MessageBox.Show("Cập Nhật Lớp " + lophocphan.Ten + " thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Load_lai_quanly();
+            }    
+            else
+            {
+                MessageBox.Show("Cập nhật Thất bại, xin bạn xem lại thao tác!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Load_lai_quanly();
+            }
+        }
+        #endregion
 
 
-        
     }
 }

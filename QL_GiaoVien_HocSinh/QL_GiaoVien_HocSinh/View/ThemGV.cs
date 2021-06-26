@@ -16,16 +16,17 @@ namespace QL_GiaoVien_HocSinh.View
     public partial class ThemGV : Form
     {
         Controllers _control = new Controllers();
+        DataGridView dataGridView;
+        DataAccess da = new DataAccess();
         public ThemGV()
         {
             InitializeComponent();
         }
-
-        private void btnThoat_Click(object sender, EventArgs e)
+        public ThemGV(DataGridView _dataGridView)
         {
-            this.Close();
+            InitializeComponent();
+            dataGridView = _dataGridView;
         }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (checkAdd())
@@ -42,14 +43,19 @@ namespace QL_GiaoVien_HocSinh.View
                 gv.SoDienThoai = txtSDT.Text.ToString().Trim();
                 gv.BoMonMa = _control.getMaBoMon(cbbBoMon.Text);
 
-                bool themgv = _control.ThemGV(gv);
-                if (themgv == true)
-                {
-                    DialogResult result = MessageBox.Show("Thành công", "Chỉnh sửa", MessageBoxButtons.OK);
+                bool themgv= _control.ThemGV(gv);
+                if(themgv==true)
+                { 
+                    DialogResult result = MessageBox.Show("Thêm thành công", "Thêm", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     if (result == DialogResult.OK)
                     {
                         btnThoat_Click(sender, e);
                     }
+                }    
+                else
+                {
+                    MessageBox.Show("Thêm Thất bại, xin bạn xem lại dữ liệu nhập!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    btnThoat_Click(sender, e);
                 }
             }
         }
@@ -107,6 +113,17 @@ namespace QL_GiaoVien_HocSinh.View
             }
             return true;
 
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ThemGV_Load(object sender, EventArgs e)
+        {
+            cbbBoMon.DataSource = _control.getBoMon();
+            txtMaGV.Text = "GV" + da.LaySTT(dataGridView.Rows.Count + 1);
         }
     }
 }

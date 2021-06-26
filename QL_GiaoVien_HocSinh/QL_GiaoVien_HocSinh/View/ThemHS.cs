@@ -10,17 +10,25 @@ using System.Windows.Forms;
 using QL_GiaoVien_HocSinh.Models;
 using QL_GiaoVien_HocSinh.View;
 using QL_GiaoVien_HocSinh.Controller;
+using System.Windows.Forms;
+using QL_GiaoVien_HocSinh.Controller;
 
 namespace QL_GiaoVien_HocSinh.View
 {
-    
     public partial class ThemHS : Form
     {
         Controllers _control = new Controllers();
-        HocSinh hs = new HocSinh();
+        HocSinh hs= new HocSinh();
+        DataGridView dataGridView;
+        DataAccess da = new DataAccess();
         public ThemHS()
         {
             InitializeComponent();
+        }
+        public ThemHS(DataGridView _dataGridView)
+        {
+            InitializeComponent();
+            dataGridView = _dataGridView;
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -38,8 +46,7 @@ namespace QL_GiaoVien_HocSinh.View
                 if (rdbnam.Checked)
                     hs.GioiTinh = 1;
                 else hs.GioiTinh = 0;
-                hs.LopMa = cbbLop.Text.ToString().Trim();
-                //hs.LopMa = _control.getMaLopHocPhan(cbbLop.Text.ToString().Trim()).ToString();
+                hs.LopMa = _control.getMaLopHocPhan(cbbLop.Text.ToString().Trim()).ToString();
                 hs.SoDienThoai = txtSDT.Text.ToString().Trim();
                 hs.Email = txtEmail.Text.ToString().Trim();
                 hs.DanToc = txtDanToc.Text.ToString().Trim();
@@ -48,22 +55,23 @@ namespace QL_GiaoVien_HocSinh.View
                 bool themhs = _control.ThemHS(hs);
                 if (themhs)
                 {
-                    DialogResult result = MessageBox.Show("Thành công", "Thêm", MessageBoxButtons.OK);
+                    DialogResult result = MessageBox.Show("Thành công", "Thêm", MessageBoxButtons.OK,MessageBoxIcon.Information);
                     if (result == DialogResult.OK)
                     {
                         btnThoat_Click(sender, e);
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Thêm Thất bại, xin bạn xem lại thao tác!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    btnThoat_Click(sender, e);
                 }
             }
         }
         private bool checkThemHS()
         {
 
-            if (txtMaHS.Text.ToString().Trim().Equals(""))
-            {
-                MessageBox.Show("bạn chưa nhập mã Học Sinh!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
+            
             if (txtHoTenHS.Text.ToString().Trim().Equals(""))
             {
                 MessageBox.Show("bạn chưa nhập tên Học Sinh!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -86,6 +94,11 @@ namespace QL_GiaoVien_HocSinh.View
             }
             return true;
         }
-        
+
+        private void ThemHS_Load(object sender, EventArgs e)
+        {
+            cbbLop.DataSource = _control.getMaLopHocPhan();
+            txtMaHS.Text = "HS" + da.LaySTT(dataGridView.Rows.Count + 1);
+        }
     }
 }

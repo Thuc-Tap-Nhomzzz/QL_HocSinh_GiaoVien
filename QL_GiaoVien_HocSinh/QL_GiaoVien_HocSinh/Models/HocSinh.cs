@@ -10,7 +10,7 @@ namespace QL_GiaoVien_HocSinh.Models
     {
         public string Ma { get; set; }
         public string Ten { get; set; }
-        public int? GioiTinh { get; set; }
+        public int GioiTinh { get; set; }
         public DateTime? NgaySinh { get; set; }
         public string Email { get; set; }
         public string DanToc { get; set; }
