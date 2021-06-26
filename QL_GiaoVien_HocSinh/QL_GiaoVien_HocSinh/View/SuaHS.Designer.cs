@@ -58,12 +58,12 @@ namespace QL_GiaoVien_HocSinh.View
             // 
             this.btnThoat.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThoat.Location = new System.Drawing.Point(216, 389);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(96, 31);
             this.btnThoat.TabIndex = 136;
-            this.btnThoat.Text = "THOÁT";
+            this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
@@ -71,13 +71,14 @@ namespace QL_GiaoVien_HocSinh.View
             // 
             this.btnSua.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnSua.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.Location = new System.Drawing.Point(47, 389);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(96, 31);
             this.btnSua.TabIndex = 135;
             this.btnSua.Text = "Lưu";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // label6
             // 
@@ -310,7 +311,8 @@ namespace QL_GiaoVien_HocSinh.View
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnSua);
             this.Name = "SuaHS";
-            this.Text = "SuaHS";
+            this.Text = "Sửa Học Sinh";
+            this.Load += new System.EventHandler(this.SuaHS_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

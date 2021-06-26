@@ -15,7 +15,7 @@ namespace QL_GiaoVien_HocSinh.Models
         public String NamHoc { get; set; }
         public int? SiSo { get; set; }
         public String Thu { get; set; }
-        public int? Tiet { get; set; }
+        public string Tiet { get; set; }
         public DateTime? NgayBatDau { get; set; }
         public DateTime? NgayKetThuc { get; set; }
         public DateTime? NgayThi { get; set; }

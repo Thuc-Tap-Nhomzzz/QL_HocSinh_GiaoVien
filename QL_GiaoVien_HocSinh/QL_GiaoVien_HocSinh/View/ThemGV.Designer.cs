@@ -151,6 +151,7 @@ namespace QL_GiaoVien_HocSinh.View
             this.btnAdd.TabIndex = 95;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // dtpNgaySinh
             // 
@@ -160,6 +161,7 @@ namespace QL_GiaoVien_HocSinh.View
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(186, 22);
             this.dtpNgaySinh.TabIndex = 93;
+            this.dtpNgaySinh.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             // 
             // label8
             // 
@@ -197,6 +199,7 @@ namespace QL_GiaoVien_HocSinh.View
             // 
             // txtMaGV
             // 
+            this.txtMaGV.Enabled = false;
             this.txtMaGV.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtMaGV.Location = new System.Drawing.Point(137, 61);
             this.txtMaGV.Name = "txtMaGV";
@@ -308,7 +311,8 @@ namespace QL_GiaoVien_HocSinh.View
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ThemGV";
-            this.Text = "ThemGV";
+            this.Text = "Thêm Giáo Viên";
+            this.Load += new System.EventHandler(this.ThemGV_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

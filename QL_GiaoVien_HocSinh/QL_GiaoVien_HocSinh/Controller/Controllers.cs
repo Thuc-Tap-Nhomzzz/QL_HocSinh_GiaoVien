@@ -30,6 +30,98 @@ namespace QL_GiaoVien_HocSinh.Controller
             }
             return list;
         }
+        //-------------------------------------------------
+        public HocSinh[] getListHocSinhTheoMa(string ma)
+        {
+            string str = string.Format("select * from hocsinh where (Ma LIKE N'%" + ma + "%' OR '" + ma + "' = '')");
+            DataTable table = da.Query(str);
+            int n = table.Rows.Count;
+            int i;
+            if (n == 0) return null;
+            HocSinh[] list = new HocSinh[n];
+            for (i = 0; i < n; i++)
+            {
+                list[i] = getHocSinh(table.Rows[i]);
+            }
+            return list;
+        }
+        public HocSinh[] getListHocSinhTheoTen(string ten)
+        {
+            DataTable table = da.Query("select * from hocsinh where(Ten LIKE N'%" + ten + "%' OR '" + ten + "' = '')");
+            int n = table.Rows.Count;
+            int i;
+            if (n == 0) return null;
+            HocSinh[] list = new HocSinh[n];
+            for (i = 0; i < n; i++)
+            {
+                list[i] = getHocSinh(table.Rows[i]);
+            }
+            return list;
+        }
+        public HocSinh[] getListHocSinhTheoLop(string lop)
+        {
+            DataTable table = da.Query("select * from hocsinh where (LopMa LIKE N'%" + lop + "%' OR '" + lop + "' = '')");
+            int n = table.Rows.Count;
+            int i;
+            if (n == 0) return null;
+            HocSinh[] list = new HocSinh[n];
+            for (i = 0; i < n; i++)
+            {
+                list[i] = getHocSinh(table.Rows[i]);
+            }
+            return list;
+        }
+        public HocSinh[] getListHocSinhTheoDanToc(string dantoc)
+        {
+            DataTable table = da.Query("select * from hocsinh where (DanToc LIKE N'%" + dantoc + "%' OR '" + dantoc + "' = '')");
+            int n = table.Rows.Count;
+            int i;
+            if (n == 0) return null;
+            HocSinh[] list = new HocSinh[n];
+            for (i = 0; i < n; i++)
+            {
+                list[i] = getHocSinh(table.Rows[i]);
+            }
+            return list;
+        }
+        public int chuyenGT(string gt)
+        {
+            int _gt = 0;
+            if (int.TryParse(gt, out _gt))
+            {
+                return _gt;
+            }
+            else
+                return _gt;
+        }
+        public HocSinh[] getListHocSinhTheoGioiTinh(string gt)
+        {
+            
+            DataTable table = da.Query("select * from hocsinh where (GioiTinh =" + chuyenGT(gt) + " OR '" + gt + "' = '')");
+            int n = table.Rows.Count;
+            int i;
+            if (n == 0) return null;
+            HocSinh[] list = new HocSinh[n];
+            for (i = 0; i < n; i++)
+            {
+                list[i] = getHocSinh(table.Rows[i]);
+            }
+            return list;
+        }
+        public HocSinh[] getListHocSinhTheoDiaChi(string diachi)
+        {
+            DataTable table = da.Query("select * from hocsinh where (DiaChi LIKE N'%" + diachi + "%' OR '" + diachi + "' = '')");
+            int n = table.Rows.Count;
+            int i;
+            if (n == 0) return null;
+            HocSinh[] list = new HocSinh[n];
+            for (i = 0; i < n; i++)
+            {
+                list[i] = getHocSinh(table.Rows[i]);
+            }
+            return list;
+        }
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         public HocSinh getHocSinh(DataRow row)
         {
             HocSinh hs = new HocSinh();
@@ -101,16 +193,99 @@ namespace QL_GiaoVien_HocSinh.Controller
 
             return gv;
         }
+        //------------------------------------------------------------------------------
+        public GiaoVien[] getListGiaoVienTheoMa(string ma)
+        {
+            DataTable table = da.Query("select gv.*,"
+             + " bm.ten as BoMonTen from GiaoVien gv inner join Bomon bm on gv.Bomonma  = bm.ma where (gv.Ma LIKE N'%" + ma + "%' OR '" + ma + "' = '')");
+            int n = table.Rows.Count;
+            int i;
+            if (n == 0) return new GiaoVien[0];
+            GiaoVien[] list = new GiaoVien[n];
+            for (i = 0; i < n; i++)
+            {
+                list[i] = getGiaoVien(table.Rows[i]);
+            }
+            return list;
 
+        }
+        public GiaoVien[] getListGiaoVienTheoTen(string ten)
+        {
+            DataTable table = da.Query("select gv.*,"
+             + " bm.ten as BoMonTen from GiaoVien gv inner join Bomon bm on gv.Bomonma  = bm.ma where (gv.Ten LIKE N'%" + ten + "%' OR '" + ten + "' = '')");
+            int n = table.Rows.Count;
+            int i;
+            if (n == 0) return new GiaoVien[0];
+            GiaoVien[] list = new GiaoVien[n];
+            for (i = 0; i < n; i++)
+            {
+                list[i] = getGiaoVien(table.Rows[i]);
+            }
+            return list;
+
+        }
+        public GiaoVien[] getListGiaoVienTheoGT(string gt)
+        {
+            DataTable table = da.Query("select gv.*,"
+             + " bm.ten as BoMonTen from GiaoVien gv inner join Bomon bm on gv.Bomonma  = bm.ma where (gv.GioiTinh = " + chuyenGT(gt) + " OR '" + gt + "' = '')");
+            int n = table.Rows.Count;
+            int i;
+            if (n == 0) return new GiaoVien[0];
+            GiaoVien[] list = new GiaoVien[n];
+            for (i = 0; i < n; i++)
+            {
+                list[i] = getGiaoVien(table.Rows[i]);
+            }
+            return list;
+
+        }
+        public GiaoVien[] getListGiaoVienTheoBoMon(string bomon)
+        {
+            DataTable table = da.Query("select gv.*,"
+             + " bm.ten as BoMonTen from GiaoVien gv inner join Bomon bm on gv.Bomonma  = bm.ma where (bm.Ten LIKE N'%" + bomon + "%' OR '" + bomon + "' = '')");
+            int n = table.Rows.Count;
+            int i;
+            if (n == 0) return new GiaoVien[0];
+            GiaoVien[] list = new GiaoVien[n];
+            for (i = 0; i < n; i++)
+            {
+                list[i] = getGiaoVien(table.Rows[i]);
+            }
+            return list;
+
+        }
+        public String[] getMaGV()
+        {
+            DataTable table = da.Query("select Ma from GiaoVien");
+            int n = table.Rows.Count;
+            int i;
+            if (n == 0) return new String[0];
+            String[] list = new String[n];
+            for (i = 0; i < n; i++)
+            {
+                list[i] = table.Rows[i]["Ma"].ToString().Trim();
+            }
+            return list;
+        }
+        public string getTenGV(string ma)
+        {
+            DataTable table = da.Query("select Ten from GiaoVien where Ma ='" + ma + "'");
+            int n = table.Rows.Count;
+            string ten = "";
+            if (n== 1)
+            {
+                ten = table.Rows[0]["Ten"].ToString().Trim();
+            }
+            return ten;
+        }
+       ///-------------------------------------------------------------------------------------------------------------------
         public LopHocPhan[] getList_Lophophan()
         {
-            //DataTable table = da.Query("select l.*, gv.ten as GiaoVienTen from lophocphan l, giaovien gv where gv.ma = l.giaovienma");
             DataTable table = da.Query("select l.ma, l.Hocki, l.Namhoc, l.Siso,l.Tiet, l.Thu, l.NgayBD, l.NgayKT, l.Ngaythi, "
                 + " mh.ma as MonMa, mh.Ten as Ten, gv.ten as GiaoVienTen, gv.ma as GiaoVienMa "
                 + " from Lophocphan l inner join monhoc mh on l.monma = mh.ma "
                 + " inner join giaovien gv on gv.ma = l.Giaovienma");
             int n = table.Rows.Count;
-
             int i;
             if (n == 0) return new LopHocPhan[0];
             LopHocPhan[] list = new LopHocPhan[n];
@@ -145,7 +320,7 @@ namespace QL_GiaoVien_HocSinh.Controller
             l.NamHoc = row["NamHoc"].ToString().Trim();
             l.Thu = row["Thu"].ToString().Trim();
             l.MonHocMa = row["MonMa"].ToString().Trim();
-            l.Tiet = Convert.ToInt32(row["Tiet"].ToString().Trim());
+            l.Tiet = row["Tiet"].ToString().Trim();
             l.Ten = row["Ten"].ToString().Trim();
             l.GiaoVienMa = row["GiaoVienMa"].ToString().Trim();
             l.GiaoVienTen = row["GiaoVienTen"].ToString().Trim();
@@ -172,7 +347,8 @@ namespace QL_GiaoVien_HocSinh.Controller
         }
         public bool  XoaHS(string ma)
         {
-            da.NonQuery("delete Hocsinh where ma='" + ma + "'");
+            da.NonQuery("update HocSinh set ten =N'Học sinh này đãy bị xóa', gioitinh = 0, ngaysinh = getdate(), email = '', dantoc = ''," +
+                "diachi = '', sodienthoai = '' where ma = '"  + ma + "'");
             return true;
         }
 
@@ -197,7 +373,14 @@ namespace QL_GiaoVien_HocSinh.Controller
                 "N'"+gv.Email+"', "+gv.Luong+", N'"+gv.NhiemVu+"',N'"+gv.SoDienThoai+"','"+gv.BoMonMa+"')");
             return true;
         }
-
+        public bool update_LHP(LopHocPhan Lophocphan)
+        {
+            da.NonQuery("update LopHocPhan set Ten =N'"+ Lophocphan.Ten+ "' , Hocki =N'"+ Lophocphan.HocKy+ "', NgayBD='"+ Lophocphan.NgayBatDau+ "'," +
+                " NgayKT ='"+ Lophocphan.NgayKetThuc+ "', Ngaythi ='"+ Lophocphan.NgayThi+ "', Siso ="+ Lophocphan.SiSo+ ", Thu =N'"+ Lophocphan.Thu+ "'," +
+                " Tiet =N'"+ Lophocphan.Tiet+ "', Namhoc =N'"+ Lophocphan.NamHoc+ "', Giaovienma ='"+ Lophocphan.GiaoVienMa+ "' where Ma = '"+ Lophocphan.Ma+ "'");
+            return true;
+        }
+        
         public String getBoMon(String bomonma)
         {
             if (bomonma == "") return "";

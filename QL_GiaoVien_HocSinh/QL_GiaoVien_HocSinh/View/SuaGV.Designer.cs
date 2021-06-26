@@ -38,7 +38,7 @@ namespace QL_GiaoVien_HocSinh.View
             this.rbdNu = new System.Windows.Forms.RadioButton();
             this.rbdNam = new System.Windows.Forms.RadioButton();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.txtSDT = new System.Windows.Forms.TextBox();
@@ -142,15 +142,16 @@ namespace QL_GiaoVien_HocSinh.View
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // btnAdd
+            // btnLuu
             // 
-            this.btnAdd.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnAdd.Location = new System.Drawing.Point(82, 421);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(71, 31);
-            this.btnAdd.TabIndex = 118;
-            this.btnAdd.Text = "Lưu";
-            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnLuu.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnLuu.Location = new System.Drawing.Point(82, 421);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(71, 31);
+            this.btnLuu.TabIndex = 118;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // dtpNgaySinh
             // 
@@ -293,7 +294,7 @@ namespace QL_GiaoVien_HocSinh.View
             this.Controls.Add(this.rbdNu);
             this.Controls.Add(this.rbdNam);
             this.Controls.Add(this.btnThoat);
-            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dtpNgaySinh);
             this.Controls.Add(this.label8);
@@ -309,6 +310,7 @@ namespace QL_GiaoVien_HocSinh.View
             this.Controls.Add(this.label1);
             this.Name = "SuaGV";
             this.Text = "Sửa Thông Tin Giáo Viên";
+            this.Load += new System.EventHandler(this.SuaGV_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -325,7 +327,7 @@ namespace QL_GiaoVien_HocSinh.View
         private System.Windows.Forms.RadioButton rbdNu;
         private System.Windows.Forms.RadioButton rbdNam;
         private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;
         private System.Windows.Forms.Label label8;

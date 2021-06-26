@@ -125,10 +125,10 @@ namespace QL_GiaoVien_HocSinh.View
             // btnThoat
             // 
             this.btnThoat.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnThoat.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(239, 398);
+            this.btnThoat.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.Location = new System.Drawing.Point(210, 389);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(75, 30);
+            this.btnThoat.Size = new System.Drawing.Size(90, 32);
             this.btnThoat.TabIndex = 110;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
@@ -137,13 +137,14 @@ namespace QL_GiaoVien_HocSinh.View
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnAdd.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(47, 398);
+            this.btnAdd.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(38, 389);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 30);
+            this.btnAdd.Size = new System.Drawing.Size(87, 33);
             this.btnAdd.TabIndex = 109;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label6
             // 
@@ -163,6 +164,7 @@ namespace QL_GiaoVien_HocSinh.View
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(186, 21);
             this.dtpNgaySinh.TabIndex = 106;
+            this.dtpNgaySinh.Value = new System.DateTime(2005, 1, 1, 0, 0, 0, 0);
             // 
             // txtDiaChi
             // 
@@ -314,6 +316,7 @@ namespace QL_GiaoVien_HocSinh.View
             this.Controls.Add(this.label1);
             this.Name = "ThemHS";
             this.Text = "Thêm Học Sinh";
+            this.Load += new System.EventHandler(this.ThemHS_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

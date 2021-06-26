@@ -59,6 +59,8 @@ namespace QL_GiaoVien_HocSinh
             this.tabPageQLGD = new System.Windows.Forms.TabPage();
             this.dataGridViewQL_GiangDay = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbQuanLyGD_GiaoVienMa = new System.Windows.Forms.ComboBox();
+            this.cbQuanLyGD_HocKy = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.tbQuanLyGD_Tiet = new System.Windows.Forms.TextBox();
             this.dtpNgayThi = new System.Windows.Forms.DateTimePicker();
@@ -74,11 +76,9 @@ namespace QL_GiaoVien_HocSinh
             this.label12 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.tbQuanLyGD_HocKy = new System.Windows.Forms.TextBox();
             this.tbQuanLyGD_SiSo = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.tbQuanLyGD_GiaoVienMa = new System.Windows.Forms.TextBox();
             this.tbQuanLyGD_NamHoc = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -482,10 +482,13 @@ namespace QL_GiaoVien_HocSinh
             this.dataGridViewQL_GiangDay.Name = "dataGridViewQL_GiangDay";
             this.dataGridViewQL_GiangDay.Size = new System.Drawing.Size(1246, 456);
             this.dataGridViewQL_GiangDay.TabIndex = 3;
+            this.dataGridViewQL_GiangDay.SelectionChanged += new System.EventHandler(this.dataGridViewQL_GiangDay_SelectionChanged);
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox2.Controls.Add(this.cbQuanLyGD_GiaoVienMa);
+            this.groupBox2.Controls.Add(this.cbQuanLyGD_HocKy);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.tbQuanLyGD_Tiet);
             this.groupBox2.Controls.Add(this.dtpNgayThi);
@@ -501,11 +504,9 @@ namespace QL_GiaoVien_HocSinh
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.tbQuanLyGD_HocKy);
             this.groupBox2.Controls.Add(this.tbQuanLyGD_SiSo);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.tbQuanLyGD_GiaoVienMa);
             this.groupBox2.Controls.Add(this.tbQuanLyGD_NamHoc);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label6);
@@ -518,6 +519,28 @@ namespace QL_GiaoVien_HocSinh
             this.groupBox2.Size = new System.Drawing.Size(1246, 178);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
+            // 
+            // cbQuanLyGD_GiaoVienMa
+            // 
+            this.cbQuanLyGD_GiaoVienMa.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.cbQuanLyGD_GiaoVienMa.FormattingEnabled = true;
+            this.cbQuanLyGD_GiaoVienMa.Location = new System.Drawing.Point(994, 9);
+            this.cbQuanLyGD_GiaoVienMa.Name = "cbQuanLyGD_GiaoVienMa";
+            this.cbQuanLyGD_GiaoVienMa.Size = new System.Drawing.Size(200, 23);
+            this.cbQuanLyGD_GiaoVienMa.TabIndex = 100;
+            this.cbQuanLyGD_GiaoVienMa.SelectedIndexChanged += new System.EventHandler(this.cbQuanLyGD_GiaoVienMa_SelectedIndexChanged);
+            // 
+            // cbQuanLyGD_HocKy
+            // 
+            this.cbQuanLyGD_HocKy.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.cbQuanLyGD_HocKy.FormattingEnabled = true;
+            this.cbQuanLyGD_HocKy.Items.AddRange(new object[] {
+            "Học Kỳ I",
+            "Học Ky II"});
+            this.cbQuanLyGD_HocKy.Location = new System.Drawing.Point(171, 72);
+            this.cbQuanLyGD_HocKy.Name = "cbQuanLyGD_HocKy";
+            this.cbQuanLyGD_HocKy.Size = new System.Drawing.Size(200, 23);
+            this.cbQuanLyGD_HocKy.TabIndex = 99;
             // 
             // label15
             // 
@@ -533,7 +556,6 @@ namespace QL_GiaoVien_HocSinh
             this.tbQuanLyGD_Tiet.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.tbQuanLyGD_Tiet.Location = new System.Drawing.Point(595, 45);
             this.tbQuanLyGD_Tiet.Name = "tbQuanLyGD_Tiet";
-            this.tbQuanLyGD_Tiet.ReadOnly = true;
             this.tbQuanLyGD_Tiet.Size = new System.Drawing.Size(200, 21);
             this.tbQuanLyGD_Tiet.TabIndex = 97;
             // 
@@ -557,6 +579,7 @@ namespace QL_GiaoVien_HocSinh
             // 
             // dtpNgayBD
             // 
+            this.dtpNgayBD.CalendarMonthBackground = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dtpNgayBD.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dtpNgayBD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayBD.Location = new System.Drawing.Point(595, 78);
@@ -584,13 +607,13 @@ namespace QL_GiaoVien_HocSinh
             this.btnCapNhat.TabIndex = 34;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseVisualStyleBackColor = false;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // tbQuanLyGD_Thu
             // 
             this.tbQuanLyGD_Thu.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.tbQuanLyGD_Thu.Location = new System.Drawing.Point(595, 14);
             this.tbQuanLyGD_Thu.Name = "tbQuanLyGD_Thu";
-            this.tbQuanLyGD_Thu.ReadOnly = true;
             this.tbQuanLyGD_Thu.Size = new System.Drawing.Size(200, 21);
             this.tbQuanLyGD_Thu.TabIndex = 31;
             // 
@@ -656,15 +679,6 @@ namespace QL_GiaoVien_HocSinh
             this.label11.TabIndex = 23;
             this.label11.Text = "Ngày thi";
             // 
-            // tbQuanLyGD_HocKy
-            // 
-            this.tbQuanLyGD_HocKy.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.tbQuanLyGD_HocKy.Location = new System.Drawing.Point(171, 76);
-            this.tbQuanLyGD_HocKy.Name = "tbQuanLyGD_HocKy";
-            this.tbQuanLyGD_HocKy.ReadOnly = true;
-            this.tbQuanLyGD_HocKy.Size = new System.Drawing.Size(200, 21);
-            this.tbQuanLyGD_HocKy.TabIndex = 24;
-            // 
             // tbQuanLyGD_SiSo
             // 
             this.tbQuanLyGD_SiSo.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -691,20 +705,11 @@ namespace QL_GiaoVien_HocSinh
             this.label10.TabIndex = 19;
             this.label10.Text = "Tiết";
             // 
-            // tbQuanLyGD_GiaoVienMa
-            // 
-            this.tbQuanLyGD_GiaoVienMa.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.tbQuanLyGD_GiaoVienMa.Location = new System.Drawing.Point(994, 15);
-            this.tbQuanLyGD_GiaoVienMa.Name = "tbQuanLyGD_GiaoVienMa";
-            this.tbQuanLyGD_GiaoVienMa.Size = new System.Drawing.Size(200, 21);
-            this.tbQuanLyGD_GiaoVienMa.TabIndex = 16;
-            // 
             // tbQuanLyGD_NamHoc
             // 
             this.tbQuanLyGD_NamHoc.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.tbQuanLyGD_NamHoc.Location = new System.Drawing.Point(171, 107);
             this.tbQuanLyGD_NamHoc.Name = "tbQuanLyGD_NamHoc";
-            this.tbQuanLyGD_NamHoc.ReadOnly = true;
             this.tbQuanLyGD_NamHoc.Size = new System.Drawing.Size(200, 21);
             this.tbQuanLyGD_NamHoc.TabIndex = 20;
             // 
@@ -872,11 +877,9 @@ namespace QL_GiaoVien_HocSinh
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox tbQuanLyGD_HocKy;
         private System.Windows.Forms.TextBox tbQuanLyGD_SiSo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox tbQuanLyGD_GiaoVienMa;
         private System.Windows.Forms.TextBox tbQuanLyGD_NamHoc;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label6;
@@ -889,6 +892,8 @@ namespace QL_GiaoVien_HocSinh
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox tbQuanLyGD_Tiet;
+        private System.Windows.Forms.ComboBox cbQuanLyGD_HocKy;
+        private System.Windows.Forms.ComboBox cbQuanLyGD_GiaoVienMa;
     }
 }
 
