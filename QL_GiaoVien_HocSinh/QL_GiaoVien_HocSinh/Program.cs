@@ -8,6 +8,7 @@ namespace QL_GiaoVien_HocSinh
 {
     static class Program
     {
+        public static string X;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

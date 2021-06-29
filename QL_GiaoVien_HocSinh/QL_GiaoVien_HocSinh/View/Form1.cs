@@ -27,6 +27,7 @@ namespace QL_GiaoVien_HocSinh
             Load_gv();
             Load_hs();
             Load_quanly();
+            linkLabel1.Links.Add( 0,3, "file:///E:/Thuc%20tap%20nhom/QL_HocSinh_GiaoVien/Tai_Lieu_Huong_Dan.pdf");
         }
         private void BtnQLHS_Click(object sender, EventArgs e)
         {
@@ -375,8 +376,14 @@ namespace QL_GiaoVien_HocSinh
                 Load_lai_quanly();
             }
         }
+
+
         #endregion
 
 
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(e.Link.LinkData.ToString());
+        }
     }
 }
